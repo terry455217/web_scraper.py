@@ -1,15 +1,20 @@
 import requests
-import bs4
 from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
 
-url = 'https://www.feastogether.com.tw/booking/Ajoy/shareinfo/e7d1a364-7504-4e76-80ca-2a768a0dd7e5'
+# 加載.env文件中的環境變量
+load_dotenv()
+
+# 從環境變量中獲取URL
+url = os.getenv('URL')
 
 # print整個網頁的HTML內容
 response = requests.get(url)
 html = response.content
 
 soup = BeautifulSoup(html, 'html.parser')
-print(soup.prettify())  
+print(soup.prettify())
 
 #for link in soup.find_all('a'):
 #    print(link.get('href'))
