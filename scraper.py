@@ -49,3 +49,17 @@ print(soup.prettify())
 #        print(title.a.string)
 
 
+
+
+#USER-AGENT
+
+#新增USER-AGENT 可以偽裝成瀏覽器
+
+headers = {
+    "user-agent": "可以加入瀏覽器的headers"
+}
+
+#COOKIES
+
+#夾帶COOKIES 可以跳過登入步驟
+
